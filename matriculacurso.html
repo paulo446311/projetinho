@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição em Cursos Técnicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formulário de Inscrição</h1>
+
+    <form action="/enviar-inscricao" method="post">
+        <label for="nome">Nome completo:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telefone">Telefone:</label><br>
+        <input type="tel" id="telefone" name="telefone" required><br><br>
+
+        <label for="curso">Curso técnico:</label><br>
+        <select id="curso" name="curso" required>
+            <option value="">Selecione</option>
+            <option value="informatica">Informática</option>
+            <option value="enfermagem">Enfermagem</option>
+            <option value="administracao">Administração</option>
+            <option value="mecanica">Mecânica</option>
+        </select><br><br>
+
+        <label>
+            <input type="checkbox" name="termos" required>
+            Aceito os termos e condições
+        </label><br><br>
+
+        <button type="submit">Enviar Inscrição</button>
+    </form>
+</body>
+</html>

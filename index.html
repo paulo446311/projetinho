@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+  <title>Tela de Login</title>
+</head>
+<body>
+  <h1>Login</h1>
+
+  <!-- Formulário -->
+  <form id="loginForm" autocomplete="on">
+    <label for="usuario">Usuário ou e-mail</label><br />
+    <input
+      type="text"
+      id="usuario"
+      name="usuario"
+      placeholder="seu usuario ou usuario@gmail.com"
+      value="1011312"
+      required
+    /><br /><br />
+
+    <label for="senha">Senha</label><br />
+    <input
+      type="password"
+      id="senha"
+      name="senha"
+      minlength="6"
+      placeholder="sua senha"
+      value="11111111111"
+      required
+    /><br /><br />
+
+    <label>
+      <input type="checkbox" name="lembrar" />
+      Lembrar-me
+    </label><br /><br />
+
+    <button type="submit" class="botao">Entrar</button>
+  </form>
+
+  <p>
+    <a href="recuperarsenha.html" id="link-recuperar">Esqueci minha senha</a> |
+    <a href="criarconta.html" id="link-cadastro">Criar conta</a>
+  </p>
+
+  <script>
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // impede envio padrão
+
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
+
+      // Verifica usuário e senha pré-definidos
+      if(usuario == '1011312' && senha == '16156522646') {
+        window.location.href = 'inicio.html'; // redireciona
+      } else {
+        alert('Usuário ou senha incorretos!');
+      }
+    }); 
+  </script>
+</body>
+</html>

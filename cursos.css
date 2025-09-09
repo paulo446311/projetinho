@@ -1,0 +1,118 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #ff5e00;
+    color: #000000;
+    line-height: 1.6;
+    padding: 0 20px;
+
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1c40e0;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Seção de cursos */
+.cursos {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.cursos h2 {
+    color: #005baa;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Cada curso */
+.curso {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.curso h3 {
+    color: #005baa;
+    margin-bottom: 10px;
+}
+
+.curso p {
+    margin-bottom: 10px;
+}
+
+/* Botão de matricular */
+.botao-matricular {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.botao-matricular:hover {
+    background-color: #005bb5;
+}
+
+/* Botão de voltar */
+a[href="index.html"] {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 8px 15px;
+    background-color: #005baa;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+a[href="index.html"]:hover {
+    background-color: #004080;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #005baa;
+    color: white;
+    margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    header nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}

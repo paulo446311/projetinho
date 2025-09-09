@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senac Minas</title>
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <a href="cursos.html" class="cursos">Cursos</a>
+            <a href="senac.html" class="conheca">Nos conheça</a>
+            <a href="frequencia.html" class="frequencia">Frequência</a>
+            <a href="duvidas.html" class="batepapo">Dúvidas? Clique Aqui</a>
+            <a href="#faq" class="faq">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- Banner principal -->
+    <section class="banner">
+        
+        <h1>Bem-vindo ao Senac Minas</h1>
+        <p>Formação profissional, qualificação e inovação para o seu futuro!</p>
+    </section>
+
+    <!-- Seção sobre -->
+    <main>
+        <section class="sobre">
+            <h2>Sobre o Senac Minas</h2>
+            <p>O Senac Minas oferece cursos de formação profissional, qualificação e extensão para diversas áreas, promovendo educação de qualidade. Nosso objetivo é preparar nossos alunos para o mercado de trabalho e oportunidades de carreira.</p>
+            <img src="sobre-senac.jpg" alt="Alunos estudando" class="sobre-img">
+        </section>
+
+        <!-- Seção de cursos -->
+        <section class="cursos-destaque">
+            <h2>Cursos em Destaque</h2>
+            <div class="cursos-cards">
+                <div class="curso-card">
+                    <h3>Informática</h3>
+                    <p>Aprenda programação, redes e suporte técnico.</p>
+                </div>
+                <div class="curso-card">
+                    <h3>Gestão</h3>
+                    <p>Desenvolva habilidades em administração e liderança.</p>
+                </div>
+                <div class="curso-card">
+                    <h3>Design</h3>
+                    <p>Explore design gráfico, web e multimídia.</p>
+                </div>
+                <div class="curso-card">
+                    <h3>Saúde</h3>
+                    <p>Capacitação em enfermagem, primeiros socorros e bem-estar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção depoimentos -->
+        <section class="depoimentos">
+            <h2>Depoimentos de Alunos</h2>
+            <blockquote>
+                "O Senac me proporcionou uma formação prática e eficiente para minha carreira."
+                <footer>- Ana Silva</footer>
+            </blockquote>
+            <blockquote>
+                "Os cursos são atualizados e os professores são excelentes!"
+                <footer>- Carlos Souza</footer>
+            </blockquote>
+        </section>
+
+        <!-- Seção contato -->
+        <section class="contato">
+            <h2>Contato</h2>
+            <p>Email: contato@senacminas.com.br</p>
+            <p>Telefone: (31) 3333-3333</p>
+            <p>Endereço: Av. Afonso Pena, 1234 - Belo Horizonte, MG</p>
+            <form action="#" method="post">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Seção FAQ -->
+        <section class="faq" id="faq">
+            <h2>Perguntas Frequentes</h2>
+            <details>
+                <summary>Como me inscrevo em um curso?</summary>
+                <p>Você pode se inscrever online através da página de cursos ou presencialmente em uma unidade Senac.</p>
+            </details>
+            <details>
+                <summary>Quais formas de pagamento estão disponíveis?</summary>
+                <p>Parcelamento no cartão de crédito, boleto bancário e pagamento presencial.</p>
+            </details>
+            <details>
+                <summary>O Senac oferece cursos gratuitos?</summary>
+                <p>Sim, existem cursos gratuitos e programas de qualificação profissional. Consulte o site para mais informações.</p>
+            </details>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Senac Minas. Todos os direitos reservados.</p>
+        <p>Siga-nos nas redes sociais: 
+            <a href="#">Facebook</a> 
+            <a href="#">Instagram</a> 
+            <a href="#">LinkedIn</a>
+        </p>
+
+
+        <script>
+// Buscar produtos
+fetch('http://localhost:3000/produtos')
+  .then(res => res.json())
+  .then(data => {
+      console.log(data); // mostra os produtos no console
+  });
+
+// Inserir produto
+fetch('http://localhost:3000/produtos', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nome: 'Maçã', preco: 2.5 })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+</script>
+
+    </footer>
+</body>
+</html>

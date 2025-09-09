@@ -1,0 +1,36 @@
+body {
+    background-color: orange;
+}
+form {
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+button {
+    background-color: #0056b3; /* cor de fundo */
+    color: white;              /* cor do texto */
+    padding: 12px 24px;        /* aumenta o tamanho */
+    font-size: 16px;           /* aumenta a fonte */
+    border: none;              /* remove a borda padrão */
+    border-radius: 25px;       /* deixa arredondado */
+    cursor: pointer;           /* muda o cursor ao passar em cima */
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #007BFF; /* cor ao passar o mouse */
+}
+a {
+    padding: 12px 24px;
+    border: none;
+    background-color: #0056b3;
+    color: aliceblue;
+    border-radius: 35px;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
+    background-color: #007BFF;
+}
+

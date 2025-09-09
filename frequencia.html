@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frequencia.css">
+    <title>Chamada Senac</title>
+</head>
+<body>
+    <h1>Chamada Online</h1>
+
+    <!-- Tela de login -->
+    <section id="loginArea">
+        <h2>Login</h2>
+        <label for="usuario">Digite seu código de usuário:</label>
+        <input type="text" id="usuario" placeholder="Ex: 012345">
+        <button onclick="fazerLogin()">Entrar</button>
+        <p id="msgLogin" style="color:red;"></p>
+    </section>
+
+    <!-- Área admin -->
+    <section id="adminArea" style="display:none;">
+        <h2>Administração</h2>
+        <button id="gerarCodigo">Gerar Código</button>
+        <p>Código atual: <span id="codigoAtual">---</span></p>
+        <p>Tempo restante: <span id="tempo">0</span> segundos</p>
+        <button onclick="logout()">Sair</button>
+    </section>
+
+    <!-- Área aluno -->
+    <section id="alunoArea" style="display:none;">
+        <h2>Aluno</h2>
+        <label for="codigoAluno">Digite o código da chamada:</label>
+        <input type="text" id="codigoAluno">
+        <button id="verificarCodigo">Confirmar Presença</button>
+        <p id="resultado"></p>
+        <button onclick="logout()">Sair</button>
+    </section>
+
+    <script>
+        let codigoAtual = '';
+        let tempoRestante = 0;
+        let intervalo;
+
+       // Função de login
+function fazerLogin() {
+    const usuario = document.getElementById('usuario').value.trim();
+    const msg = document.getElementById('msgLogin');
+
+    if(usuario === '') {
+        msg.innerText = 'Digite um código de usuário.';
+        return;
+    }
+
+    msg.innerText = '';
+    document.getElementById('loginArea').style.display = 'none';
+
+    // Determina cargo
+   if (
+    usuario.startsWith('0123') || 
+    usuario === "1011312" || 
+    usuario === "1011347" || 
+    usuario === "1007956"
+) {
+    document.getElementById('adminArea').style.display = 'block';
+} else {
+    document.getElementById('alunoArea').style.display = 'block';
+}
+
+}
+
+
+        // Logout
+        function logout() {
+            document.getElementById('loginArea').style.display = 'block';
+            document.getElementById('adminArea').style.display = 'none';
+            document.getElementById('alunoArea').style.display = 'none';
+            document.getElementById('usuario').value = '';
+            document.getElementById('codigoAluno').value = '';
+            document.getElementById('resultado').innerText = '';
+            document.getElementById('codigoAtual').innerText = '---';
+            clearInterval(intervalo);
+        }
+
+        // Função para gerar código (admin)
+        function gerarCodigo() {
+            codigoAtual = Math.floor(100 + Math.random() * 900).toString();
+            document.getElementById('codigoAtual').innerText = codigoAtual;
+
+            tempoRestante = 3000;
+            document.getElementById('tempo').innerText = tempoRestante;
+
+            clearInterval(intervalo);
+            intervalo = setInterval(() => {
+                tempoRestante--;
+                document.getElementById('tempo').innerText = tempoRestante;
+                if (tempoRestante <= 0) {
+                    clearInterval(intervalo);
+                    codigoAtual = '';
+                    document.getElementById('codigoAtual').innerText = 'Expirado';
+                }
+            }, 1000);
+        }
+
+        // Função para verificar código (aluno)
+        function verificarCodigo() {
+            const codigoAluno = document.getElementById('codigoAluno').value.trim();
+            const resultado = document.getElementById('resultado');
+
+            if (codigoAluno === codigoAtual && codigoAtual !== '') {
+                resultado.style.color = 'green';
+                resultado.innerText = 'Presença confirmada!';
+            } else {
+                resultado.style.color = 'red';
+                resultado.innerText = 'Código inválido ou expirado.';
+            }
+        }
+       
+        document.getElementById('gerarCodigo').addEventListener('click', gerarCodigo);
+        document.getElementById('verificarCodigo').addEventListener('click', verificarCodigo);
+    </script>
+    <p><a href="index.html">⬅ Voltar</a></p>
+
+    <a href="mensagens.html"></a>
+    <a href="conexao.js"></a>
+</body>
+</html>

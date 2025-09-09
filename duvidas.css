@@ -1,0 +1,47 @@
+/* Estilo geral */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: orange;
+    color: #333;
+
+}
+
+/* Cabeçalho */
+h1 {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    
+}
+
+/* Perguntas */
+h3 {
+    color: rgb(36, 6, 206);
+    margin-top: 20px;
+}
+
+/* Respostas */
+p {
+    background: #ffffff;
+    padding: 10px 15px;
+    border-left: 4px solid #003366;
+    margin: 5px 0 20px 0;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(60, 255, 0, 0.1);
+}
+
+/* Efeito hover para destaque */
+p:hover {
+    background-color: #e6f0ff;
+    transition: 0.3s;
+}
+
+button {
+    color: red;
+    background-color: rgb(212, 140, 114);
+}

@@ -1,0 +1,92 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Títulos */
+h1 {
+    color: #005baa;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #0073e6;
+    margin-bottom: 15px;
+    
+}
+
+/* Inputs e botões */
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0073e6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Mensagens de alerta/resultado */
+#msgLogin, #resultado {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Seções */
+section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Código e tempo do admin */
+#codigoAtual {
+    font-weight: bold;
+    color: #0073e6;
+}
+
+#tempo {
+    font-weight: bold;
+    color: #ff6600;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    input[type="text"] {
+        width: 100%;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+}
